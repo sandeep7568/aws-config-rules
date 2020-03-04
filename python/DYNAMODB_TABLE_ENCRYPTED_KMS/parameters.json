@@ -1,0 +1,12 @@
+{
+  "Version": "1.0",
+  "Parameters": {
+    "CodeKey": "DYNAMODB_TABLE_ENCRYPTED_KMS.zip",
+    "SourceRuntime": "python3.6-lib",
+    "RuleName": "DYNAMODB_TABLE_ENCRYPTED_KMS",
+    "SourceEvents": "AWS::DynamoDB::Table",
+    "OptionalParameters": "{}",
+    "InputParameters": "{}"
+  },
+  "Tags": "[]"
+}
