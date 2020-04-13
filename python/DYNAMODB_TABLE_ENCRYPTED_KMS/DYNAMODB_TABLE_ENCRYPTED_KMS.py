@@ -9,7 +9,7 @@ Description:
   Check whether Amazon DynamoDB Table is encrypted with KMS.
 
 Rationale:
-  Encrypting on Amazon Dynamo ensure that no data is written on disk in clear text.
+  Encrypting on Amazon DynamoDB tables ensure that no data is written on disk in clear text.
 
 Indicative Severity:
   Medium
@@ -21,7 +21,7 @@ Reports on:
   AWS::DynamoDB::Table
 
 Rule Parameters:(optional)
-  Provide comma seperated KMS Key Arns list.
+  Provide comma seperated KMS Key ARN list.
 
 Scenarios:
 
@@ -45,11 +45,13 @@ Scenarios:
       And: Amazon DynamoDB table is not encrypted with KMS
      Then: Return NON_COMPLIANT
   Scenario: 6
-    Given: Amazon DynamoDB table is active and KmsKeyArns Rule Parameter provided
+    Given: Amazon DynamoDB table is active
+      And: KmsKeyArns Rule Parameter provided
       And: Amazon DynamoDB table is encrypted with provided KmsKeyArns Rule Parameter
      Then: Return COMPLIANT
   Scenario: 7
-    Given: Amazon DynamoDB table is active and KmsKeyArns Rule Parameter provided
+    Given: Amazon DynamoDB table is active
+      And: KmsKeyArns Rule Parameter provided
       And: Amazon DynamoDB table is not encrypted with with provided KmsKeyArns Rule Parameter
      Then: Return NON_COMPLIANT
 '''
